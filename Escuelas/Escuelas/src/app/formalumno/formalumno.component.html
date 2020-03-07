@@ -1,0 +1,93 @@
+<div class="all">
+  <div class="formulario">
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+      <p>
+        <mat-form-field
+          class="mat-form-field"
+          color="accent"
+          appearance="legacy"
+        >
+          <mat-label class="mat-label">nombre</mat-label>
+          <input
+
+            autocomplete="off"
+            matInput
+            placeholder="Escribe!"
+            formControlName="nombre"
+          />
+          <mat-icon matSuffix>picture_in_picture</mat-icon>
+          <mat-hint></mat-hint>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field color="accent" appearance="standard">
+          <mat-label class="mat-label">apellidos</mat-label>
+          <input
+
+            autocomplete="off"
+            matInput
+            placeholder="Escribe!"
+            formControlName="apellidos"
+          />
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint class="mat-hint">Tell us who you are</mat-hint>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field color="basic" appearance="standard">
+          <mat-label class="mat-label">email</mat-label>
+          <input
+
+            autocomplete="off"
+            matInput
+            placeholder="Url!"
+            formControlName="email"
+          />
+          <mat-icon matSuffix>mail</mat-icon>
+          <mat-hint> show us a ;)</mat-hint>
+        </mat-form-field>
+      </p>
+       <p>
+        <mat-form-field color="basic" appearance="standard">
+          <mat-label class="mat-label">edad</mat-label>
+          <input
+
+            autocomplete="off"
+            matInput
+            placeholder="Url!"
+            formControlName="edad"
+          />
+          <mat-icon matSuffix>edad</mat-icon>
+          <mat-hint> show us a ;)</mat-hint>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field color="accent" appearance="outline">
+          <mat-label class="mat-label">matricula</mat-label>
+          <input
+
+            autocomplete="off"
+            matInput
+            placeholder="Escribe!"
+            formControlName="matricula"
+          />
+          <mat-icon matSuffix>mat</mat-icon>
+          <mat-hint>mat</mat-hint>
+        </mat-form-field>
+      </p>
+
+      <button
+        mat-raised-button
+        color="basic"
+        matBadge="8"
+        matBadgePosition="before"
+        matBadgeColor="accent"
+        type="submit"
+      >
+        Done
+      </button>
+    </form>
+
+
+  </div>
+</div>

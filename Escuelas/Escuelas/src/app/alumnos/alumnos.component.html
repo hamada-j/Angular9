@@ -1,0 +1,23 @@
+<div>
+  <h1>Lista de Alumnos</h1>
+
+  <table matSort>
+    <tr>
+      <th mat-sort-header="name">Nombre</th>
+      <th mat-sort-header="calories">Apellidos</th>
+      <th mat-sort-header="fat">Email</th>
+      <th mat-sort-header="carbs">Matricula</th>
+      <th mat-sort-header="protein">Discapacidad</th>
+    </tr>
+
+    <tr *ngFor="let dessert of arrayAlumnos">
+      <td>{{ dessert.nombre }}</td>
+      <td>{{ dessert.apellidos }}</td>
+      <td>{{ dessert.email }}</td>
+      <td>{{ dessert.matricula }}</td>
+      <td>{{ dessert.discapacidad }}</td>
+      <td><button [routerLink]="['/alumnos', dessert.id]">detalle</button></td>
+      <td><button (click)="manejarClick(dessert)">borrar</button></td>
+    </tr>
+  </table>
+</div>

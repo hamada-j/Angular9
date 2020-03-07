@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+    if student
+        h2 #{student.nombre} #{student.apellidos}
+        p Nota media: #{student.notamedia} Sexo: #{student.sexo}
+        p= student.email
+        p Fecha matriculacion: #{student.fecha_matricula.toLocaleDateString()}
+        p Matricula: #{student.matricula}
+        p Discapacidad: #{student.discapacidad}
+        if student.fk_sedes
+            p Sede #{student.fk_sedes.nombre}
+    else
+        p No existe un alumno con este ID

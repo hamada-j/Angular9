@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+    h2 Nuevo alumno
+
+    form(action="/students/create", method="POST")
+        .form-group
+            label(for="nombre")
+            input.form-control(type="text", id="nombre", name="nombre" placeholder="Nombre")
+        .form-group
+            label(for="apellidos")
+            input.form-control(type="text", id="apellidos", name="apellidos" placeholder="Apellidos")
+        .form-group
+            label(for="edad")
+            input.form-control(type="number", id="edad", name="edad" placeholder="Edad")
+        .form-group
+            label(for="email")
+            input.form-control(type="text", id="email", name="email" placeholder="Email")
+        .form-group
+            label(for="nMatricula")
+            input.form-control(type="text", id="nMatricula", name="nMatricula" placeholder="Nº matrícula")
+        .form-group
+            input.btn.btn-primary(type="submit", value="Enviar")
