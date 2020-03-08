@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { ShopService } from "../shop.service";
 
 @Component({
@@ -11,9 +11,13 @@ export class ProductComponent implements OnInit {
   product: any;
   constructor(
     private activateRoute: ActivatedRoute,
-    private routing: ShopService
+    private routing: ShopService,
+    private router: Router
   ) {
     this.product = {};
+  }
+  handelClickBack($event) {
+    this.router.navigate(["/products"]);
   }
 
   ngOnInit() {

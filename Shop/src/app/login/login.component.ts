@@ -8,6 +8,7 @@ import {
 } from "@angular/forms";
 import { ShopService } from "../shop.service";
 import { ErrorStateMatcher } from "@angular/material/core";
+import { Router } from "@angular/router";
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(
@@ -36,7 +37,7 @@ export class LoginComponent implements OnInit {
 
   matcher = new MyErrorStateMatcher();
   formSignup: FormGroup;
-  constructor(private servcioSignup: ShopService) {
+  constructor(private servcioSignup: ShopService, private router: Router) {
     this.formSignup = new FormGroup({
       email: new FormControl(" ", [
         Validators.required,
@@ -54,5 +55,6 @@ export class LoginComponent implements OnInit {
     console.log(this.formSignup.value);
     this.servcioSignup.login(this.formSignup.value);
     this.formSignup.reset();
+    this.router.navigate(["/orders"]);
   }
 }

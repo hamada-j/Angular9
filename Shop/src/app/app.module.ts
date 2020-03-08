@@ -20,6 +20,7 @@ import { ProductComponent } from "./product/product.component";
 import { LoginComponent } from "./login/login.component";
 import { SingupComponent } from "./singup/singup.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { OrdersComponent } from './orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     HomeComponent,
     ProductComponent,
     LoginComponent,
-    SingupComponent
+    SingupComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,

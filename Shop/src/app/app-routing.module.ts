@@ -5,6 +5,7 @@ import { ProductComponent } from "./product/product.component";
 import { SingupComponent } from "./singup/singup.component";
 import { LoginComponent } from "./login/login.component";
 import { AppComponent } from "./app.component";
+import { OrdersComponent } from "./orders/orders.component";
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: "signup",
     component: SingupComponent
+  },
+  {
+    path: "orders",
+    component: OrdersComponent
   },
   {
     path: "**",
