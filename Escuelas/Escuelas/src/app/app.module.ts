@@ -23,10 +23,15 @@ import { AppComponent } from "./app.component";
 import { AlumnosComponent } from "./alumnos/alumnos.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FormalumnoComponent } from "./formalumno/formalumno.component";
-import { AlumnoComponent } from './alumno/alumno.component';
+import { AlumnoComponent } from "./alumno/alumno.component";
 
 @NgModule({
-  declarations: [AppComponent, AlumnosComponent, FormalumnoComponent, AlumnoComponent],
+  declarations: [
+    AppComponent,
+    AlumnosComponent,
+    FormalumnoComponent,
+    AlumnoComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

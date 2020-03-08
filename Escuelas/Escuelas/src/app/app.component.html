@@ -1,2 +1,36 @@
+<div
+  class="nav
+"
+>
+  <mat-icon
+    _ngcontent-usf-c60=""
+    role="img"
+    class="mat-icon notranslate material-icons mat-icon-no-color"
+    aria-hidden="true"
+  ></mat-icon>
+  <mat-toolbar class="toolbar" color="basic">
+    <div>
+      <mat-icon matSuffix>category</mat-icon> Administracion de la Escuela
+    </div>
+    <div class="example-button-row">
+      <a color="basic" mat-fab (click)="handelClickFormulario($event)"
+        ><mat-icon matSuffix>move_to_inbox</mat-icon></a
+      >
+    </div>
+    <div class="example-button-row">
+      <a color="link" mat-fab (click)="handelClickAll($event)"
+        ><mat-icon matSuffix>ballot</mat-icon></a
+      >
+    </div>
+  </mat-toolbar>
 
-<router-outlet></router-outlet>
+  <mat-icon
+    _ngcontent-usf-c60=""
+    role="img"
+    class="mat-icon notranslate material-icons mat-icon-no-color"
+    aria-hidden="true"
+  ></mat-icon>
+</div>
+<div class="control  ">
+  <router-outlet></router-outlet>
+</div>

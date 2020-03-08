@@ -1,0 +1,15 @@
+<mat-toolbar>
+  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="handelClickHome($event)">Products</button>
+    <button mat-menu-item (click)="handelClickLogin($event)">Login</button>
+    <button mat-menu-item (click)="handelClickSignup($event)">Signup</button>
+  </mat-menu>
+  <div>
+    <h1>
+      The RestFull Api Shop
+    </h1>
+  </div>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

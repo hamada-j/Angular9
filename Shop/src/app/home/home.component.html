@@ -1,0 +1,20 @@
+<div>
+  <h1>Products List</h1>
+
+  <table matSort>
+    <tr>
+      <th mat-sort-header="name">name</th>
+      <th mat-sort-header="calories">price</th>
+      <th mat-sort-header="fat">image</th>
+    </tr>
+
+    <tr *ngFor="let products of arrayProducts">
+      <td>{{ products.name }}</td>
+      <td>{{ products.price }}</td>
+      <td>{{ products.productImage }}</td>
+      <img src="{{ products.productImage }}" alt="" />
+      <td><button [routerLink]="['/home', products._id]">see</button></td>
+      <!-- <td><button (click)="manejarClick(product)">borrar</button></td> -->
+    </tr>
+  </table>
+</div>
