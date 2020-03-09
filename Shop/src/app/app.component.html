@@ -1,15 +1,28 @@
-<mat-toolbar>
-  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="handelClickHome($event)">Products</button>
-    <button mat-menu-item (click)="handelClickLogin($event)">Login</button>
-    <button mat-menu-item (click)="handelClickSignup($event)">Signup</button>
-  </mat-menu>
-  <div>
-    <h1>
-      The RestFull Api Shop
-    </h1>
-  </div>
-</mat-toolbar>
-
+<nav class="navbar" aria-label="Top Toolbar" class="docs-navbar-header">
+  <mat-toolbar color="accent" class="mat-toolbar">
+    <button mat-menu-item [matMenuTriggerFor]="menu">
+      icono
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="handelClickHome($event)">
+        home
+      </button>
+      <button mat-menu-item (click)="handelClickProducts($event)">
+        Products
+      </button>
+      <button mat-menu-item (click)="handelClickLogin($event)">Login</button>
+      <button mat-menu-item (click)="handelClickSignup($event)">
+        Signup
+      </button>
+    </mat-menu>
+    <div>
+      <h1>
+        The RestFull Api Shop
+      </h1>
+    </div>
+  </mat-toolbar>
+</nav>
+<header _ngcontent-csu-c60="" class="docs-primary-header component-page-header">
+  <h1 _ngcontent-csu-c60="" focusonnavigation="" tabindex="-1">.</h1>
+</header>
 <router-outlet></router-outlet>

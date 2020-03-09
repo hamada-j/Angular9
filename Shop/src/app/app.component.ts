@@ -10,8 +10,10 @@ export class AppComponent {
   title = "Shop";
 
   constructor(private router: Router) {}
-
   handelClickHome($event) {
+    this.router.navigate(["/shop-nav"]);
+  }
+  handelClickProducts($event) {
     this.router.navigate(["/home"]);
   }
   handelClickLogin($event) {

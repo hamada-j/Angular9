@@ -6,6 +6,7 @@ import { SingupComponent } from "./singup/singup.component";
 import { LoginComponent } from "./login/login.component";
 import { AppComponent } from "./app.component";
 import { OrdersComponent } from "./orders/orders.component";
+import { ShopNavComponent } from "./shop-nav/shop-nav.component";
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: "home",
     component: HomeComponent
+  },
+  {
+    path: "shop-nav",
+    component: ShopNavComponent
   },
   {
     path: "home/:products._id",
