@@ -3,6 +3,9 @@ import { Routes, RouterModule } from "@angular/router";
 import { AlumnosComponent } from "./alumnos/alumnos.component";
 import { FormalumnoComponent } from "./formalumno/formalumno.component";
 import { AlumnoComponent } from "./alumno/alumno.component";
+import { RegistroComponent } from "./registro/registro.component";
+import { LoginComponent } from "./login/login.component";
+import { LoginGuard } from "./login.guard";
 
 const routes: Routes = [
   {
@@ -12,7 +15,8 @@ const routes: Routes = [
   },
   {
     path: "alumnos",
-    component: AlumnosComponent
+    component: AlumnosComponent,
+    canActivate: [LoginGuard]
   },
   {
     path: "alumnos/:alumnoId",
@@ -21,6 +25,16 @@ const routes: Routes = [
   {
     path: "formulario",
     component: FormalumnoComponent
+  },
+
+  {
+    path: "register",
+    component: RegistroComponent
+  },
+
+  {
+    path: "login",
+    component: LoginComponent
   },
   {
     path: "**",

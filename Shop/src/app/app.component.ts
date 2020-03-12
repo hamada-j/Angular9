@@ -16,6 +16,9 @@ export class AppComponent {
   handelClickProducts($event) {
     this.router.navigate(["/home"]);
   }
+  handelClickOrders($event) {
+    this.router.navigate(["/orders"]);
+  }
   handelClickLogin($event) {
     this.router.navigate(["/login"]);
   }

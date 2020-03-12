@@ -22,8 +22,9 @@ import { LoginComponent } from "./login/login.component";
 import { SingupComponent } from "./singup/singup.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { OrdersComponent } from "./orders/orders.component";
-import { ShopNavComponent } from "./shop-nav/shop-nav.component";
+
 import { LayoutModule } from "@angular/cdk/layout";
+import { OrderComponent } from "./order/order.component";
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { LayoutModule } from "@angular/cdk/layout";
     LoginComponent,
     SingupComponent,
     OrdersComponent,
-    ShopNavComponent
+
+    OrderComponent
   ],
   imports: [
     BrowserModule,

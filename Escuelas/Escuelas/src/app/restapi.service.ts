@@ -9,21 +9,30 @@ export class RestapiService {
   baseUrl: string;
   constructor(private httpClient: HttpClient) {
     // Inicializacion y asignamiento de valor de la URL del servidor
-    this.baseUrl = "http://localhost:3000/api/student";
+    this.baseUrl = "http://localhost:3000/api/";
   }
 
   // Metodos
   getAll(): Promise<any> {
-    return this.httpClient.get(this.baseUrl).toPromise();
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "user-token": localStorage.getItem("token")
+      })
+    };
+    return this.httpClient
+      .get(`${this.baseUrl}student`, httpOptions)
+      .toPromise();
   }
 
   // Metodos con parametros
   getById(pAlumnoId): Promise<any> {
-    return this.httpClient.get(`${this.baseUrl}/${pAlumnoId}`).toPromise();
+    return this.httpClient
+      .get(`${this.baseUrl}student/${pAlumnoId}`)
+      .toPromise();
   }
 
   create(value): Promise<any> {
-    return this.httpClient.get(this.baseUrl, value).toPromise();
+    return this.httpClient.get(`${this.baseUrl}student`, value).toPromise();
   }
 
   // El Metedo DELETE necesita de un segundo pametro que es la cabecera HTTP
@@ -36,6 +45,19 @@ export class RestapiService {
         studentId: pAlumnoId
       }
     };
-    return this.httpClient.delete(this.baseUrl, httpOptions).toPromise();
+    return this.httpClient
+      .delete(`${this.baseUrl}student`, httpOptions)
+      .toPromise();
+  }
+
+  register(values): Promise<any> {
+    return this.httpClient
+      .post(`${this.baseUrl}users/register`, values)
+      .toPromise();
+  }
+  login(values): Promise<any> {
+    return this.httpClient
+      .post(`${this.baseUrl}users/login`, values)
+      .toPromise();
   }
 }

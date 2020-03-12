@@ -32,4 +32,13 @@ export class AppComponent {
     // console.log($event);
     this.router.navigate(["/alumnos"]);
   }
+
+  handelClickRegister($event) {
+    // console.log($event);
+    this.router.navigate(["/register"]);
+  }
+  handelClickLogin($event) {
+    // console.log($event);
+    this.router.navigate(["/login"]);
+  }
 }

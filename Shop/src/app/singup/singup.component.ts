@@ -30,6 +30,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ["./singup.component.css"]
 })
 export class SingupComponent implements OnInit {
+  errores: any[];
   emailFormControl = new FormControl("", [
     Validators.required,
     Validators.email
@@ -49,13 +50,23 @@ export class SingupComponent implements OnInit {
         Validators.minLength(3)
       ])
     });
+
+    this.errores = [];
   }
 
   onSubmit() {
     // console.log(this.formSignup.value);
-    this.servcioSignup.signup(this.formSignup.value);
+    this.servcioSignup
+      .signup(this.formSignup.value)
+      .then(response => {
+        console.log(response);
+        this.router.navigate(["/orders"]);
+      })
+      .catch(err => {
+        // console.log(err.error);
+        this.errores = err.error;
+      });
     this.formSignup.reset();
-    this.router.navigate(["/login"]);
   }
 
   ngOnInit(): void {}

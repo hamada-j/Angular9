@@ -10,13 +10,15 @@ export class ShopService {
   constructor(private httpClient: HttpClient) {
     this.baseUrl = "http://localhost:3000/";
   }
-  ////////////////// PRODUCT /////////////////////
+  ///////////////////////////////////////////////////////////
+  ////////////////// PRODUCT ////////////////////////////////
+  ///////////////////////////////////////////////////////////
   // Metodos
   getAll(): Promise<any> {
     return this.httpClient.get(`${this.baseUrl}products`).toPromise();
   }
 
-  // Metodos con parametros
+  ////////////// Metodos con parametros
   getById(pProductId): Promise<any> {
     return this.httpClient
       .get(`${this.baseUrl}products/${pProductId}`)
@@ -31,7 +33,7 @@ export class ShopService {
     return this.httpClient.patch(this.baseUrl, values).toPromise();
   }
 
-  // El Metedo DELETE necesita de un segundo pametro que es la cabecera HTTP
+  ////////////// El Metedo DELETE necesita de un segundo pametro que es la cabecera HTTP
   delete(pProductId): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -44,9 +46,11 @@ export class ShopService {
     return this.httpClient.delete(this.baseUrl, httpOptions).toPromise();
   }
 
+  ///////////////////////////////////////////////////////////
   //////////////////// CLIENT AND ADMIN /////////////////////
+  ///////////////////////////////////////////////////////////
 
-  // Metodos con parametros
+  ////////////// Metodos con parametros
   login(values): Promise<any> {
     return this.httpClient
       .post(`${this.baseUrl}client/login`, values)
@@ -60,7 +64,10 @@ export class ShopService {
       .toPromise();
   }
 
-  ///// ADMIN ONLY //////
+  ///////////////////////////////////////////////////////////
+  ///////////////// ADMIN ONLY //////////////////////////////
+  ///////////////////////////////////////////////////////////
+
   deleteClient(clientId): Promise<any> {
     console.log(clientId);
     return this.httpClient
@@ -68,22 +75,27 @@ export class ShopService {
       .toPromise();
   }
 
-  //////////////////// CLIENT AND ORDERS /////////////////////
-  ///// ADMIN ONLY //////
-  // Metodos
-  getAllOrders(token): Promise<any> {
+  ///////////////////////////////////////////////////////////
+  //////////////////// CLIENT AND ORDERS ////////////////////
+  ///////////////////////////////////////////////////////////
+
+  //////////////// Metodos
+  getAllOrders(): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
         "Content-Type": "application/json"
       })
     };
-    return this.httpClient.get(`${this.baseUrl}ordres`).toPromise();
+    return this.httpClient
+      .get(`${this.baseUrl}orders`, httpOptions)
+      .toPromise();
   }
-  getOrder(token, orderId): Promise<any> {
+
+  getOrder(orderId): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
         "Content-Type": "application/json"
       })
     };
@@ -91,22 +103,23 @@ export class ShopService {
       .get(`${this.baseUrl}ordres/${orderId}`, httpOptions)
       .toPromise();
   }
-  deleteOrder(token, orderId): Promise<any> {
+  deleteOrder(orderId): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
         "Content-Type": "application/json"
       })
     };
+
     return this.httpClient
       .delete(`${this.baseUrl}ordres/${orderId}`, httpOptions)
       .toPromise();
   }
 
-  makelOrder(token, productId): Promise<any> {
+  makeOrder(productId): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
         "Content-Type": "application/json"
       })
     };

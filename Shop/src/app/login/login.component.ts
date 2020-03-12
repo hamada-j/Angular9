@@ -53,8 +53,16 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     console.log(this.formSignup.value);
-    this.servcioSignup.login(this.formSignup.value);
-    this.formSignup.reset();
-    this.router.navigate(["/orders"]);
+    this.servcioSignup
+      .login(this.formSignup.value)
+      .then(response => {
+        console.log(response.token);
+        localStorage.setItem("token", response.token);
+        localStorage.setItem("token_since", new Date().toISOString());
+      })
+      .catch(err => {
+        console.log(err);
+        this.router.navigate(["/login"]);
+      });
   }
 }

@@ -12,7 +12,12 @@
     <td>{{ product?.product._id }}</td>
     <td>{{ product?.product.price }}</td>
     <td>{{ product?.product.productImage }}</td>
-    <img src="" alt="" />
+    <td>
+      <img
+        [src]="'http://localhost:3000' + product?.product.productImage"
+        alt=""
+      />
+    </td>
   </tr>
 </table>
 

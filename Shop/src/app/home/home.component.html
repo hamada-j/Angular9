@@ -14,8 +14,10 @@
     >
       <td>{{ products.name }}</td>
       <td>{{ products.price }}</td>
-      <td>{{ products.productImage }}</td>
-      <img src="{{ products.productImage }}" alt="" />
+      <td>img:{{ products.productImage }}</td>
+      <td>
+        <img [src]="'http://localhost:3000' + products.productImage" alt="" />
+      </td>
 
       <!-- <td><button (click)="manejarClick(product)">borrar</button></td> -->
     </tr>

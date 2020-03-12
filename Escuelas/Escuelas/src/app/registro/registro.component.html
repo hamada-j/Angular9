@@ -1,0 +1,67 @@
+<div class="all">
+  <div class="formulario">
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+      <p>
+        <mat-form-field
+          class="mat-form-field"
+          color="accent"
+          appearance="legacy"
+        >
+          <mat-label class="mat-label">username</mat-label>
+          <input
+            autocomplete="off"
+            matInput
+            placeholder="Escribe!"
+            formControlName="username"
+          />
+          <mat-icon matSuffix>picture_in_picture</mat-icon>
+          <mat-hint></mat-hint>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field color="basic" appearance="standard">
+          <mat-label class="mat-label">email</mat-label>
+          <input
+            autocomplete="off"
+            matInput
+            placeholder="email@email.sc"
+            formControlName="email"
+          />
+          <mat-icon matSuffix>mail</mat-icon>
+          <mat-hint>email de contacto</mat-hint>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field color="accent" appearance="standard">
+          <mat-label class="mat-label">password</mat-label>
+          <input
+            autocomplete="off"
+            matInput
+            placeholder="Escribe!"
+            formControlName="password"
+          />
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint class="mat-hint">password</mat-hint>
+        </mat-form-field>
+      </p>
+
+      <button
+        mat-raised-button
+        color="basic"
+        matBadge="8"
+        matBadgePosition="before"
+        matBadgeColor="accent"
+        type="submit"
+      >
+        Acceder
+      </button>
+    </form>
+  </div>
+
+  <ul>
+    <li *ngFor="let error of errores">
+      {{ error.msg }}
+    </li>
+  </ul>
+</div>

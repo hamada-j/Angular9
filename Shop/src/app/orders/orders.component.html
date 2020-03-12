@@ -1,1 +1,19 @@
-<p>orders works!</p>
+<h3>{{ error }}</h3>
+
+<div>
+  <h1>Products List</h1>
+
+  <table matSort>
+    <tr>
+      <th mat-sort-header="name">Order Id</th>
+      <th mat-sort-header="calories">Product</th>
+      <th mat-sort-header="fat">Quantity</th>
+    </tr>
+
+    <tr *ngFor="let order of arrayOrders" [routerLink]="['/order', order._id]">
+      <td>{{ order._id }}</td>
+      <td>{{ order.product }}</td>
+      <td>{{ order.quantity }}</td>
+    </tr>
+  </table>
+</div>
