@@ -2,7 +2,7 @@
     \                           /
      \                         /
       \      This part is     /
-       ]        Angular.     [
+       ]        Angular      [
        ]        Hamada       [    ,'|
        ]                     [   /  |
        ]___               ___[ ,'   |
